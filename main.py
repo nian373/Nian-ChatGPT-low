@@ -1,7 +1,7 @@
 import streamlit as st
 from utils import generate_script
 
-st.title("🎬视频脚本生成器")
+st.title("🎬快乐数模视频脚本生成器")
 
 with st.sidebar:
     openai_api_key = st.text_input("请输入OpenAI API密钥：", type="password")

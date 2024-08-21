@@ -1,7 +1,7 @@
 import streamlit as st
 from utils import generate_script
 
-st.title("🎬 炎同学视频脚本生成器")
+st.title("🎬视频脚本生成器")
 
 with st.sidebar:
     openai_api_key = st.text_input("请输入OpenAI API密钥：", type="password")
@@ -24,12 +24,11 @@ if submit and not video_length >= 0.1:
     st.stop()
 if submit:
     with st.spinner("AI正在思考中，请稍等..."):
-        title, script = generate_script(subject, video_length, creativity, openai_api_key)
+         search_result,title, script = generate_script(subject, video_length, creativity, openai_api_key)
     st.success("视频脚本已生成！")
     st.subheader("🔥 标题：")
     st.write(title)
     st.subheader("📝 视频脚本：")
     st.write(script)
-    # with st.expander("维基百科搜索结果 👀"):
-    #     st.info(search_result)
-#search_result,
+    with st.expander("维基百科搜索结果 👀"):
+         st.info(search_result)
